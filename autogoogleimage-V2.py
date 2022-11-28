@@ -58,7 +58,7 @@ def googleimage(driver, filepathlist):
             except Exception as e1:
                 print(repr(e1))
                 print("第一次异常")
-                return resultlist
+                return resultlist, urllist
 
             try:
                 print("Line:{}, 进行Upload操作中...".format(sys._getframe().f_lineno))
@@ -88,7 +88,7 @@ def googleimage(driver, filepathlist):
             except Exception as e2:
                 print(repr(e2))
                 print("upload步骤异常")
-                return resultlist
+                return resultlist, urllist
 
             try:
                 print("\nLine:{}, 获取图片输入元素中...".format(sys._getframe().f_lineno))
@@ -98,7 +98,7 @@ def googleimage(driver, filepathlist):
             except Exception as e3:
                 print(repr(e3))
                 print("获取图片输入元素异常")
-                return resultlist
+                return resultlist, urllist
 
         try:
             print("Line:{}, 图片输入中...".format(sys._getframe().f_lineno))
